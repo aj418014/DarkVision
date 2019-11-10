@@ -12,6 +12,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -24,6 +25,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        mIALocationManager = IALocationManager.create(this);
     }
 
 
@@ -42,6 +44,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker at Irvine and move the camera
         LatLng irvine = new LatLng(39.325641, -82.105712);
         mMap.addMarker(new MarkerOptions().position(irvine).title("Marker in Irvine"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(irvine));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(irvine, 19));
+
     }
 }

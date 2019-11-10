@@ -4,11 +4,17 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url "http://indooratlas-ltd.bintray.com/mvn-public"
+
+        }
         
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
-        
+        implementation 'com.indooratlas.android:indooratlas-android-sdk:3.1.0@aar'
+        implementation 'com.android.support:support-compat:29.0.2'
+        implementation 'com.indooratlas.android:indooratlas-android-sdk:3.1.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

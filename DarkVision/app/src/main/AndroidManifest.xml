@@ -6,7 +6,15 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
+    <!--This declaration requires that all three sensors as well as wifi are enabled
+        if they are not, the app will not function as intended-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+    <uses-feature android:name="android.hardware.sensor.compass"  android:required="true" />
+    <uses-feature android:name="android.hardware.sensor.gyroscope"  android:required="true" />
+    <uses-feature android:name="android.hardware.wifi" android:required="true" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -26,7 +34,14 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="@string/google_maps_key"
+            />
+        <meta-data
+            android:name="com.indooratlas.android.sdk.API_KEY"
+            android:value="54075c4c-1e5b-443c-8eca-6b049b129972"/>
+        <meta-data
+            android:name="com.indooratlas.android.sdk.API_SECRET"
+            android:value="97ayzIlF6GePf81kwzmcaV876U1mVJiTxspZDgRnR8WAoopKcJhGzECCuDseh0M3m10iwT+JHfhljb4qr45+bQOp8sM2U/VA95XkgRPN5GyBgdNgke9OUo6Lm509iw=="/>
 
         <activity
             android:name=".MapsActivity"
@@ -37,6 +52,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
